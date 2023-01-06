@@ -22,6 +22,7 @@ such as TCP, IP and others will be covered.
 | Grading Criteria | [Here](#grading-criteria) |
 | Attendance is Graded | [Here](#attendance-is-graded) |
 | Projects will be Checked for Academic Honesty | [Here](#projects-will-be-checked-for-academic-honesty) |
+| getopt Tutorial | [Here](./getopt/README.md) |
 
 ---
 
@@ -52,6 +53,9 @@ The textbook is [An Introduction to Computer Networks](<http://intronetworks.cs.
 Dordal.
 
 It is free.
+
+Specifically for all our projects,
+[this link will be your lifesaver](<https://beej.us/guide/bgnet/html/split-wide/>).
 
 ---
 
