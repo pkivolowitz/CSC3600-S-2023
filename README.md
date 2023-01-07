@@ -162,3 +162,9 @@ honesty violations.
 
 * Two violations will be reported to the Provost for disciplinary
 consequences.
+
+## Projects
+
+| Project | Content | Location |
+| ------- | ------- | -------- |
+| P1 | UDP Blaster | [Here](./projects/p1) |
