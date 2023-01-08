@@ -35,7 +35,7 @@ to this specification. If you deviate in anyway, you might be able to
 talk between your own client and server but you will fail to talk to
 mine. And therefore, fail in your project.
 
-It prove difficult for me to provide an operating server and client to
+It may prove difficult for me to provide an operating server and client to
 you as I would have to support 4 architectures times 2 programs (as I am
 not going to distribute the source code for obvious reasons). I would
 have to provide binaries for both client and server for:
