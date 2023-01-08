@@ -18,11 +18,13 @@ such as TCP, IP and others will be covered.
 | Learning Outcomes | [Here](#learning-outcomes) |
 | Textbook | [Here](#textbook) |
 | Programming Environment | [Here](#programming-environment) |
+| Projects | [Here](#projects) |
 | Special Note on Projects | [Here](#special-note-on-projects) |
 | Grading Criteria | [Here](#grading-criteria) |
 | Attendance is Graded | [Here](#attendance-is-graded) |
 | Projects will be Checked for Academic Honesty | [Here](#projects-will-be-checked-for-academic-honesty) |
 | getopt Tutorial | [Here](./getopt/README.md) |
+
 
 ---
 
@@ -49,13 +51,18 @@ and Sockets
 
 ## Textbook
 
+### Dordal
+
 The textbook is [An Introduction to Computer Networks](<http://intronetworks.cs.luc.edu/current2/ComputerNetworks.pdf>) by Peter
 Dordal.
 
 It is free.
 
-Specifically for all our projects,
-[this link will be your lifesaver](<https://beej.us/guide/bgnet/html/split-wide/>).
+### Beej
+
+Specifically for our projects, [this
+link](<https://beej.us/guide/bgnet/html/split-wide/>) to Beej's Guide
+ will be your lifesaver.
 
 ---
 
@@ -69,12 +76,19 @@ Projects mostly require the Berkeley Sockets API.
 you will have to use WSL or WSL 2 or some other virtual machine
 capability.
 
+### Installing WSL the Easy Way
+
+On Windows, run a command prompt **in Administrator mode**. Then type:
+
+```wsl --install```
+
 ### Programming Language
 
 Except for one project, all projects must be implemented in C, C++ or
 a mixture of C and C++.
 
-One project will require the use of a prog
+One project, the last, will be different. It is based on the first
+project so do a good job on it.
 
 ### How Programs are Graded
 
@@ -85,6 +99,8 @@ Programs will be graded:
 * for style and clarity
 
 * for comments
+
+* for correctness, of course
 
 You are approaching graduation and the real world. Grading standards
 correspondingly shift closer to the real world.
@@ -168,3 +184,5 @@ consequences.
 | Project | Content | Location |
 | ------- | ------- | -------- |
 | P1 | UDP Blaster | [Here](./projects/p1) |
+| P2 | Client Side Walkie Talkie | [Here](./projects/p2_and_p3/) |
+| P3 | Server Side Walkie Talkie | [Here](./projects/p2_and_p3/) |
