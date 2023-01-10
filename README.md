@@ -179,6 +179,8 @@ honesty violations.
 * Two violations will be reported to the Provost for disciplinary
 consequences.
 
+---
+
 ## Projects
 
 | Project | Content | Location |
@@ -186,3 +188,7 @@ consequences.
 | P1 | UDP Blaster | [Here](./projects/p1) |
 | P2 | Client Side Walkie Talkie | [Here](./projects/p2_and_p3/) |
 | P3 | Server Side Walkie Talkie | [Here](./projects/p2_and_p3/) |
+| P4 | Client Side Retro Chat | [Here](./projects/p4_and_p5/) |
+| P5 | Server Side Retro Chat | [Here](./projects/p4_and_p5/) |
+| P6 | maybe - place holder | N/A |
+| P*n* | Fun! Fun! Fun! | [Here](./projects/p_last/) |
