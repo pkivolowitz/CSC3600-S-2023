@@ -26,6 +26,9 @@ pointer driven.
 
 4. Introduce makefiles.
 
+5. Lead to discussion about programming practices relating to high speed
+input / output.
+
 ## Project Specifications Are Critical
 
 You are writing both client and server. Your server must communicate
@@ -35,7 +38,7 @@ to this specification. If you deviate in anyway, you might be able to
 talk between your own client and server but you will fail to talk to
 mine. And therefore, fail in your project.
 
-It may prove difficult for me to provide an operating server and client to
+It prove difficult for me to provide an operating server and client to
 you as I would have to support 4 architectures times 2 programs (as I am
 not going to distribute the source code for obvious reasons). I would
 have to provide binaries for both client and server for:
@@ -111,15 +114,21 @@ ERROR unknown sequence number received: 91
 Your client program will be sending as fast as possible. The server will
 be responding as quickly as it can. The network stack on both sides have
 a fairly limited number of packets they can buffer before dropping them.
-Therefore, your client must **interleave** transmission and reception.
+
 Additionally, the client must attempt to read responses from the server
 **but not block on the read if no data is available**.
+
+Therefore, your client must **interleave** transmission and reception.
+E.g. inside the main loop you do one send and one attempt to receive
+(remember that reading does not block). But even this may not be
+performant. Maybe your main loop does one send and several attempts to
+receive?
 
 **This bears repeating:** The client cannot send out 262,000 packets and
 *then* start reading. In the inner loop you must **both** transmit and
 attempt to read.
 
-**And the client's socket must be set to non-blocking IO.** This is
+**The client's socket must be set to non-blocking IO.** This is
 likely the first time you've ever seen this.
 
 The server can block on reading because it has nothing to do if there is
@@ -248,7 +257,7 @@ You are given `defaults.hpp`. It contains:
 
 #define	PORT_NUMBER				39390
 #define SERVER_IP				"127.0.0.1"
-#define NUMBER_OF_DATAGRAMS		(1 << 18)
+#define NUMBER_OF_DATAGRAMS		(1 << 16)
 ```
 
 It provides the default values for: port number, destination address and
@@ -329,6 +338,12 @@ You *must* implement the `-h`, `-s` and `-p` options.
 You *may* implement the `-d` option. This option is for you to enable
 debugging features that you might design and implement.
 
+**There are two more command line options you must support but these
+will be described later, once you've had a chance to experience some
+misery.**
+
+Just kidding, feel free to read on to be forewarned about the misery.
+
 As described [above](#non-blocking-io), the client's socket must be
 set to non-blocking. Your inner loop must interleave sending and
 attempting to read.
@@ -381,7 +396,7 @@ In other words, the number of bytes returned by `recvfrom()`.
 ***Unlike the client**, the server can block on reads. Servers respond
 to client requests so they may block on read waiting for these.
 
-### Command line options
+### Server Command line options
 
 You must support the following command line options:
 
@@ -405,23 +420,81 @@ freed with `delete` or `free()` respectively.
 ## Berkeley Sockets Related Functions You Will Wse
 
 You will use `sendto()` and `recvfrom()` to transmit and receive. These
-will both be done over the same socket. [See Beej](<https://beej.us/guide/bgnet/html/split-wide/system-calls-or-bust.html#sendtorecv>).
+will both be done over the same socket. [See
+Beej](<https://beej.us/guide/bgnet/html/split-wide/system-calls-or-bust.html#sendtorecv>).
 
 The `socket()` function opens a socket. When you call this function you
 specify that the socket is to speak UDP rather than another protocol.
-UDP sends and receives datagrams. [See Beej](<https://beej.us/guide/bgnet/html/split-wide/system-calls-or-bust.html#socket>).
+UDP sends and receives datagrams. [See
+Beej](<https://beej.us/guide/bgnet/html/split-wide/system-calls-or-bust.html#socket>).
 
 You will need the family of functions related to `ntohl()` and the
 reverse `htonl()`. These functions ensure a predictable ordering of
 bytes within an `int` (for example). Failure to use these functions will
-lead to tears. [See Beej](<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#htonsman>).
+lead to tears. [See
+Beej](<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#htonsman>).
 
 `fcntl()` is used to set the non-blocking mode on the socket. See above.
-[See Beej](<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#fcntlman>).
+[See
+Beej](<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#fcntlman>).
 
 `gethostbyname()` is used to turn a character / human readable server
-name into a number. [See Beej[(<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#gethostbynameman>) but maybe you should
-get to know the [current equivalent](<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#getaddrinfoman>) but these are harder to use.
+name into a number. [See
+Beej[(<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#gethostbynameman>)
+but maybe you should get to know the [current
+equivalent](<https://beej.us/guide/bgnet/html/split-wide/man-pages.html#getaddrinfoman>)
+but these are harder to use.
+
+## Running Over A Network as Opposed To Locally
+
+When you connect to 127.0.0.1 or `localhost` you are skipping a great
+deal of complexity by not actually hitting any network hardware. You
+will be able to send and receive datagrams at incredible speeds. Even
+so, you will drop packets. Amazing.
+
+When you start sending datagrams over an actual network you will run
+into problems relating to overfull buffers and lack of memory. You
+will be totally at a loss, thinking it's you. It isn't you.
+
+Here are the two additional command line options the *client* must
+support:
+
+* `-n` overrides the default number of datagrams to send. Once you
+introduce a delay, 2^18 datagrams can take a long time to send. When
+using delay, a nice number might be 65536 which is 2^16.
+
+* `-y` says introduce an *n* microsecond dela`y` between sending
+datagrams. Use `usleep()` for this.
+
+## More Questions About Performance
+
+I've already mentioned that it might be a good idea to attempt to
+receive several times for each attempt to send. This can improve
+reliability.
+
+The `-y` introduces a delay into the main loop. But when you do that,
+you're slowing down the main loop. While this helps clear out buffers
+on the transmit side (sending slower lets datagrams clear the output
+side of the hardware), it makes clearing out buffers on the read side
+harder. However, since the server only responds to the client, slowing
+down the client also slows down the server.
+
+If only there was a way to decouple the speed of sending from the speed
+of receiving. Hmmm. Think about this. Ask questions in class. But don't
+attempt to actually fix it - the solution is too sophisticated for
+nearly all of you right now.
+
+## There Will Be a Server Running on the CS Subnet
+
+To be able to experience problems with actually going over a network,
+I will arrange for a machine sitting on the CS sub-network that will
+continuously run the server. This means you must be on the CS subnet in
+order to reach it. 
+
+This requires help from campus IT staff because of network security
+measures they must put in place to keep us all comfy and safe. The
+procedure to get onto the CS subnet has not been defined at the time
+of this writing.
 
 ## Work Rules
 
