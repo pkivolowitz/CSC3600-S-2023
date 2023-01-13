@@ -28,6 +28,10 @@
 
 * `udp`
 
+  * `memmove()`
+
+  * `memset()`
+
   * best effort
 
   * `socket()`
@@ -36,13 +40,9 @@
 
   * `hostent`
 
-  * `memset()`
-
   * `sin_family`
 
   * `AF_INET`
-
-  * `memmove()`
 
   * `sendto()`
 
@@ -51,4 +51,14 @@
   * `bind()`
 
   * `recvfrom()`
-  
+
+## Hardware
+
+* What is a hub? What layers?
+
+* What is a switch? What layers?
+
+* What is a router? What layers?
+
+* What is a NIC?
+
