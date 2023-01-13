@@ -74,7 +74,11 @@ Projects mostly require the Berkeley Sockets API.
 
 * Windows does not expose the Berkeley Sockets API to users. Instead,
 you will have to use WSL or WSL 2 or some other virtual machine
-capability.
+capability. This will be easy for running both client and server on
+your own machine but running a server on WSL and expecting to be
+reached from the outside is hard. You're running a VM inside Windows.
+Also, Microsoft. Meaning by WSL version 11 it'll be easy to do. We're
+on WSL version 2. So. Microsoft.
 
 ### Installing WSL the Easy Way
 
@@ -82,17 +86,19 @@ On Windows, run a command prompt **in Administrator mode**. Then type:
 
 ```wsl --install```
 
+You'll get some version of Ubuntu and that's good enough.
+
 ### Programming Language
 
 Except for one project, all projects must be implemented in C, C++ or
 a mixture of C and C++.
 
 One project, the last, will be different. It is based on the first
-project so do a good job on it.
+project so do a good job on that first project.
 
 ### How Programs are Graded
 
-Programs will be graded:
+Except for one project, projects will be graded:
 
 * on a Macintosh - do not use features specific to Windows.
 
@@ -104,6 +110,8 @@ Programs will be graded:
 
 You are approaching graduation and the real world. Grading standards
 correspondingly shift closer to the real world.
+
+For the "other" project, you will grade your peers.
 
 ## Special Note on Projects
 
@@ -119,6 +127,11 @@ Similarly, you cannot test something you've just added to the Server
 until you have implemented something in the Client.
 
 In this way, network applications are bootstrapped side-by-side.
+
+On the other hand, suppose you had a kind hearted sweet pushover for a
+professor who assigned writing one side at a time and provided the
+other side to you for testing. Boy that professor would get great
+evaluations, wouldn't they?
 
 ---
 
