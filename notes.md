@@ -62,3 +62,23 @@
 
 * What is a NIC?
 
+  * Show EB920
+
+  * Tell naming story (Business lesson)
+
+  * Show National Semiconductor document (Device Driver lesson)
+
+## ARP
+
+* From bottom to top
+
+* Bridges network to link layer i.e. bridges IP address to MAC address.
+
+* See [book](http://intronetworks.cs.luc.edu/current2/html/ipv4companions.html#address-resolution-protocol-arp)
+
+* Essentially
+
+  * "Who has IP <nnnnn>"
+
+  * "I do - my MAC address is <yyyyy>"
+

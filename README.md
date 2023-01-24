@@ -15,6 +15,7 @@ such as TCP, IP and others will be covered.
 
 | Topic | Link |
 | ----- | ---- |
+| Help | [Here](#help) |
 | Learning Outcomes | [Here](#learning-outcomes) |
 | Textbook | [Here](#textbook) |
 | Programming Environment | [Here](#programming-environment) |
@@ -25,8 +26,26 @@ such as TCP, IP and others will be covered.
 | Projects will be Checked for Academic Honesty | [Here](#projects-will-be-checked-for-academic-honesty) |
 | getopt Tutorial | [Here](./getopt/README.md) |
 
-
 ---
+
+## Help
+
+I do not post office hours despite this being a requirement of all
+faculty.
+
+What I do instead, which I believe is better, is have "open" office
+hours. I.e. any time is a potential office hour. Simply use Google
+Calendar to book an appointment with me. Remember to send me the
+invitation!
+
+As all help sessions are provided via Zoom, nights and weekends are OK
+within reason. Mornings are difficult.
+
+Wednesdays near noon hours are not possible due to campus obligations.
+
+[This is the link to a standing Zoom
+meeting](https://carthage-edu.zoom.us/j/4456320007?pwd=UmZNa3ZDOTI2NHdhR21sSmxDR21KUT09).
+Use this meeting link for all out-of-class help from me.
 
 ## Learning Outcomes
 
@@ -205,3 +224,9 @@ consequences.
 | P5 | Server Side Retro Chat | [Here](./projects/p4_and_p5/) |
 | P6 | maybe - place holder | N/A |
 | P*n* | Fun! Fun! Fun! | [Here](./projects/p_last/) |
+
+## Useful Links
+
+| Topic | Link |
+| ----- | ---- |
+| getopt | [here](https://azrael.digipen.edu/~mmead/www/Courses/CS180/getopt.html) |
