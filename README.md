@@ -3,8 +3,8 @@
 ## Overview
 
 This course is primarily about designing and implementing network
-centric or network aware single threaded and multithreaded
-applications. As such, the course is project intensive.
+centric or network aware single threaded and multithreaded applications.
+As such, the course is project intensive.
 
 Additionally, the nature, purpose and mechanics of certain protocols
 such as TCP, IP and others will be covered.
@@ -59,8 +59,8 @@ As a result of taking this course, students should be able to:
 
 * Understand principles underlying protocols such as ARP, TCP, IP, UDP, DHCP.
 
-* Understand NAT, Broadcasting, VPN, Shortest Path, Reachability, Forwarding, Routing, Ports,
-and Sockets
+* Understand NAT, Broadcasting, VPN, Shortest Path, Reachability,
+Forwarding, Routing, Ports, and Sockets
 
 * Utilize the Linux / Unix development tool chain featuring make and gcc / g++.
 
@@ -112,8 +112,8 @@ You'll get some version of Ubuntu and that's good enough.
 Except for one project, all projects must be implemented in C, C++ or
 a mixture of C and C++.
 
-One project, the last, will be different. It is based on the first
-project so do a good job on that first project.
+The last project will be different. It is based on the first project so
+do a good job on that first project. Make sure you understand it.
 
 ### How Programs are Graded
 
@@ -128,7 +128,9 @@ Except for one project, projects will be graded:
 * for correctness, of course
 
 You are approaching graduation and the real world. Grading standards
-correspondingly shift closer to the real world.
+correspondingly shift closer to the real world. While consequences for
+poor performance is still merely a low grade, consequences in the real
+world include unemployment.
 
 For the "other" project, you will grade your peers.
 
@@ -222,11 +224,13 @@ consequences.
 | P3 | Server Side Walkie Talkie | [Here](./projects/p2_and_p3/) |
 | P4 | Client Side Retro Chat | [Here](./projects/p4_and_p5/) |
 | P5 | Server Side Retro Chat | [Here](./projects/p4_and_p5/) |
-| P6 | maybe - place holder | N/A |
-| P*n* | Fun! Fun! Fun! | [Here](./projects/p_last/) |
+| P6 | Bong's Graph Algorithm | [Here](./projects/p6) |
+| P7 | Fun! Fun! Fun! | [Here](./projects/p_last/) |
 
 ## Useful Links
 
 | Topic | Link |
 | ----- | ---- |
-| getopt | [here](https://azrael.digipen.edu/~mmead/www/Courses/CS180/getopt.html) |
+| getopt (external) | [Here](https://azrael.digipen.edu/~mmead/www/Courses/CS180/getopt.html) |
+| getopt (mine) | [Here](./getopt/) |
+| Beej's Guide | [Here](<https://beej.us/guide/bgnet/html/split-wide/>) |
