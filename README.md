@@ -232,4 +232,8 @@ consequences.
 | ----- | ---- |
 | getopt (external) | [Here](https://azrael.digipen.edu/~mmead/www/Courses/CS180/getopt.html) |
 | getopt (mine) | [Here](./getopt/) |
-| Beej's Guide | [Here](<https://beej.us/guide/bgnet/html/split-wide/>) |
+| Beej's Guide | [Here](<https://beej.us/guide/bgnet/html/split-wide/>)|
+| Installing Wireshark on Mac|[Here](<https://www.wireshark.org/docs/wsug_html_chunked/ChBuildInstallOSXInstall.html>)|
+| Installing Wireshark on Win|[Here](https://www.wireshark.org/docs/wsug_html_chunked/ChBuildInstallWinInstall.html)|
+| Practical Networking|[Here](https://www.practicalnetworking.net/series/)|
+
