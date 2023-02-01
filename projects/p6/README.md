@@ -2,9 +2,9 @@
 
 This project takes us away from coding network applications to
 implementing a fundamental algorithm that operates behind the scenes.
-Major Richard Bong, born in WI, was America's highest scoring fighter
-ace in WWII. His exploits in war are well documented. Less well known
-are his contributions to computer science. Among these is his famous
+Major Richard Bong, born in Wisconsin, was America's highest scoring
+fighter ace in WWII. His exploits in war are well documented. Less well
+known are his contributions to Computer Science, principally his famous
 graph algorithm.
 
 Maj. Bong needed a way to compute a route from A to B that used the
@@ -128,7 +128,13 @@ Notice the size of the graph can vary from data file to data file.
 
 ## Command Line
 
-The command line must specify the data file.
+The command line must specify the data file. If the data file is not
+present, simply exit the program.
+
+```text
+% ./a.out
+%
+```
 
 ## Ask For The Initial Node
 
@@ -149,6 +155,31 @@ The data format is simple, you must make your own graphs.
 * They must be valid.
 
 * The are to be handed in with your code.
+
+## Sample Output
+
+```text
+% ./a.out 4x4.txt
+Opened: 4x4.txt for reading.
+Number of nodes: 4
+Connectivity table read.
+Enter initial node number [0 to 3]: 2
+                    Cum.    Prev
+   From:     To:   Cost:   Node:
+       2       0       4       1
+       2       1       3       2
+       2       2       0      -1 <--<<
+       2       3       1       2
+%
+```
+
+**This says that the cost to get from initial node 2 (counting from 0)
+to node 0 costs 4 units and it gets to node 0 via node 1. This printing
+of the node number before the destination is required.**
+
+The preceding should influence your design of data structures.
+
+The "arrow" indicates the initial node.
 
 ## Work Rules
 
