@@ -4,12 +4,15 @@
 
 This course is primarily about designing and implementing network
 centric or network aware single threaded and multithreaded applications.
-As such, the course is project intensive.
+As such, the course is project intensive. With that said, the projects
+are fairly similar as network programming follows a set pattern.
+
+Also keep in mind that four projects (2 and 3 as well as projects 4 and
+5) would usually be combined into two projects by meaner, nastier and
+professors more cruel than I.
 
 Additionally, the nature, purpose and mechanics of certain protocols
 such as TCP, IP and others will be covered.
-
----
 
 ## Table of Contents
 
@@ -25,8 +28,6 @@ such as TCP, IP and others will be covered.
 | Attendance is Graded | [Here](#attendance-is-graded) |
 | Projects will be Checked for Academic Honesty | [Here](#projects-will-be-checked-for-academic-honesty) |
 | getopt Tutorial | [Here](./getopt/README.md) |
-
----
 
 ## Help
 
@@ -51,29 +52,36 @@ Use this meeting link for all out-of-class help from me.
 
 As a result of taking this course, students should be able to:
 
-* Design and implement client-server applications using datagram (UDP) means.
+* Design and implement client-server applications using datagram (UDP)
+  means.
 
-* Design and implement client-server applications using reliable (TCP) means.
+* Design and implement client-server applications using reliable (TCP)
+  means.
 
-* Design and implement multithreaded client-server applications using reliable (TCP) means.
+* Design and implement multithreaded client-server applications using
+  reliable (TCP) means.
 
-* Understand principles underlying protocols such as ARP, TCP, IP, UDP, DHCP.
+* Understand and recognize the (five) layers in a network stack.
+
+* Understand principles underlying protocols such as ARP, TCP, IP, UDP,
+  DHCP.
 
 * Understand NAT, Broadcasting, VPN, Shortest Path, Reachability,
 Forwarding, Routing, Ports, and Sockets
 
-* Utilize the Linux / Unix development tool chain featuring make and gcc / g++.
+* Utilize the Linux / Unix development tool chain featuring make and gcc
+  / g++.
 
-* Utilize and understand Linux-based networking tools such as ping, traceroute, and other tools
-
----
+* Utilize and understand Linux-based networking tools such as ping,
+  traceroute, and other tools
 
 ## Textbook
 
 ### Dordal
 
-The textbook is [An Introduction to Computer Networks](<http://intronetworks.cs.luc.edu/current2/ComputerNetworks.pdf>) by Peter
-Dordal.
+The textbook is [An Introduction to Computer
+Networks](<http://intronetworks.cs.luc.edu/current2/ComputerNetworks.pdf>)
+by Peter Dordal.
 
 It is free.
 
@@ -82,8 +90,6 @@ It is free.
 Specifically for our projects, [this
 link](<https://beej.us/guide/bgnet/html/split-wide/>) to Beej's Guide
  will be your lifesaver.
-
----
 
 ## Programming Environment
 
@@ -154,8 +160,6 @@ professor who assigned writing one side at a time and provided the
 other side to you for testing. Boy that professor would get great
 evaluations, wouldn't they?
 
----
-
 ## Grading Criteria
 
 The following are the gradable categories along with their weighting.
@@ -170,8 +174,6 @@ Note that these values supersede those given in the published syllabus.
 
 Both exams will be administered on Schoology. The Final exam is
 cumulative.
-
----
 
 ## Attendance is Graded
 
@@ -190,7 +192,8 @@ For example:
 
 * At 10 absences you will have lost 8 points from your aggregate score.
 
-* At 11 absences and beyond you will have lost 10 points from your aggregate score.
+* At 11 absences and beyond you will have lost 10 points from your
+  aggregate score.
 
 Your aggregate score is defined as the weighted average of course
 grades. Students begin with an assumed perfect score for attendance.
@@ -199,8 +202,6 @@ in an adjusted grade for attendance.
 
 *Since attendance is graded, you must check to ensure your attendance
 is captured accurately.*
-
----
 
 ## Projects will be Checked for Academic Honesty
 
@@ -212,8 +213,6 @@ honesty violations.
 
 * Two violations will be reported to the Provost for disciplinary
 consequences.
-
----
 
 ## Projects
 
