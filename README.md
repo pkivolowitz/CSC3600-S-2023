@@ -14,6 +14,14 @@ professors more cruel than I.
 Additionally, the nature, purpose and mechanics of certain protocols
 such as TCP, IP and others will be covered.
 
+### Getting Going
+
+We will cover some theory / technology *minimally* first, just enough to
+get you started on your projects. Then, once you're coding we will
+circle back to examine theory / technology in more detail. Again, the
+first week or two will be superficial information about network
+technology so that you can get to work on your projects.
+
 ## Table of Contents
 
 | Topic | Link |
