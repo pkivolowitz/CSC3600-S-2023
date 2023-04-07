@@ -22,10 +22,12 @@ char SelectCharacter() {
 */
 
 bool Delay(int steps_per_second = 8) {
-    assert(steps_per_second > 0);
+	static timespec ts = {0, 0};
+	assert(steps_per_second > 0);
 	int modifier = 1000 / steps_per_second;
-
-	static timespec ts = {0, 1000 * 1000 * modifier};
+    // tv_nsec is in nanoseconds. Multiply modifier by 1,000,000 to
+    // convert to milliseconds.
+    ts.tv_nsec = 1000 * 1000 * modifier;
     return !nanosleep(&ts, nullptr);
 }
 
