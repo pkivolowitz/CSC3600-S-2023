@@ -48,7 +48,9 @@ int main() {
         LINES / 3, COLS / 3, 
         LINES - 2 * LINES / 3, COLS - 2 * COLS / 3
     );
-    int sw_lines, sw_cols;
+    // Silence unused variable warning for sw_lines.
+	__attribute__((unused)) int sw_lines;
+	int sw_cols;
 
     curs_set(0);
     getmaxyx(secondary_window, sw_lines, sw_cols);
